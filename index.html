@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeApi</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <nav>
+        <a href="index.html">
+          <h2>Pokedex</h2>
+        </a>
+        <div class="menu">
+          <div class="search">
+            <input type="text" placeholder="Search Pokemon" />
+            <button onclick="searchPokemon()">Search</button>
+          </div>
+        </div>
+      </nav>
+      <div class="title">Discover Pokemon Character!</div>
+    </div>
+    <div class="container">
+      <div class="pagination">
+        <button class="page" onclick="pagination('prev')">Prev</button
+        ><span class="pageorder">1</span
+        ><button class="page" onclick="pagination('next')">Next</button>
+      </div>
+      <div class="result">
+        <!-- <h3 class="h3">
+          Search Result For <span class="search-result"></span>
+        </h3> -->
+      </div>
+      <div class="row"></div>
+      <div class="scroll">
+        <span class="material-symbols-outlined"> arrow_upward </span>
+      </div>
+      <div class="loading">
+        <img src="assets/pokeball.png" alt="" />
+        <p>Catch The Pokemon</p>
+      </div>
+    </div>
+
+    <footer>
+      <h4>mrakasondara</h4>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- <div class="card ${classType}">
+       <div class="id">#${pokemon.id}</div>
+      <div class="image">
+        <img
+          src="${image}"
+          alt=""
+          class="pokeimg"
+        />
+      </div>
+      <div class="aksi">
+      <h4>${pokemon.name}</h4>
+      <button onclick="getDetail(${pokemon.id})">Detail</button>
+      </div>
+    </div>  -->

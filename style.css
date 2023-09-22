@@ -1,0 +1,485 @@
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+  scroll-behavior: smooth;
+}
+:root {
+  --bg-primary: rgb(51, 51, 190);
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50vh;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(68, 66, 151, 1) 0%,
+    rgba(15, 15, 233, 1) 31%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+.hero nav {
+  display: flex;
+  width: 100%;
+  height: 20%;
+  align-items: center;
+  padding: 0 20px;
+  color: rgb(241, 239, 235);
+}
+nav a {
+  margin-right: auto;
+  color: rgb(241, 239, 235);
+  text-decoration: none;
+}
+nav .menu {
+  display: flex;
+  width: 40%;
+}
+.menu .search {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 30px;
+  gap: 10px;
+}
+.search input {
+  border-radius: 10px;
+  padding: 10px;
+  color: rgb(241, 239, 235);
+  background-color: transparent;
+  box-shadow: 0 0 2px 2px var(--bg-primary);
+  border: none;
+  outline: none;
+}
+input::placeholder {
+  outline: none;
+  color: rgb(241, 239, 235);
+}
+.search button {
+  padding: 0 10px;
+  border-radius: 10px;
+  background-color: var(--bg-primary);
+  color: rgb(241, 239, 235);
+  border: none;
+  outline: none;
+  transition: 0.8s ease-in-out;
+}
+.search button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 213, 255, 0.748);
+}
+
+.hero .title {
+  margin-top: 50px;
+  width: 50%;
+  padding: 0 20px;
+  font-size: 50px;
+  font-weight: 900;
+  color: whitesmoke;
+}
+
+.container {
+  /* position: relative; */
+  display: flex;
+  width: 100%;
+  min-height: 50vh;
+  flex-direction: column;
+  align-items: center;
+}
+.pagination {
+  display: flex;
+  margin-top: 20px;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.pagination span {
+  font-size: 20px;
+}
+.pagination button {
+  height: 30px;
+  width: 10%;
+  background-color: var(--bg-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: 0.6s ease-in;
+  outline: none;
+}
+.pagination button:hover {
+  cursor: pointer;
+  background-color: rgb(42, 161, 235);
+}
+.result {
+  display: none;
+  width: 90%;
+  color: white;
+  border-radius: 8px;
+  margin: 20px 0;
+  padding: 10px 30px;
+}
+.success {
+  background-color: var(--bg-primary);
+}
+.danger {
+  background-color: rgb(192, 8, 8);
+}
+
+.result h3 {
+  font-size: 20px;
+}
+.result span {
+  color: lightgreen;
+}
+.active {
+  display: flex;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  width: 20%;
+  min-height: 300px;
+  background-color: red;
+}
+.card .id {
+  display: flex;
+  height: 10%;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 800;
+  color: beige;
+}
+.card .image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+}
+.image img {
+  width: 90%;
+}
+.card .aksi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  margin-top: 10px;
+  height: 10%;
+}
+.aksi h4 {
+  font-size: 17px;
+  color: beige;
+}
+.aksi button {
+  width: 30%;
+  background-color: var(--bg-primary);
+  padding: 5px 0;
+  color: beige;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  transition: 0.8s ease-in-out;
+}
+/* card background style */
+.electric {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(254, 255, 0, 1) 0%,
+    rgba(249, 255, 10, 1) 0%,
+    rgba(255, 244, 0, 1) 48%,
+    rgba(200, 215, 46, 1) 100%
+  );
+}
+.ground {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(254, 255, 0, 1) 0%,
+    rgba(157, 105, 13, 1) 0%,
+    rgba(189, 129, 6, 1) 48%,
+    rgba(76, 65, 14, 1) 100%
+  );
+}
+.grass {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(68, 66, 151, 1) 0%,
+    rgba(104, 255, 0, 1) 0%,
+    rgba(8, 151, 0, 1) 92%
+  );
+}
+.normal {
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+.bug {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(68, 66, 151, 1) 0%,
+    rgba(2, 70, 8, 1) 0%,
+    rgba(202, 239, 0, 1) 92%
+  );
+}
+.water {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(68, 66, 151, 1) 0%,
+    rgba(0, 48, 188, 1) 0%,
+    rgba(20, 187, 200, 1) 100%
+  );
+}
+.poison {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(254, 255, 0, 1) 0%,
+    rgba(150, 15, 187, 1) 0%,
+    rgba(114, 22, 145, 1) 48%,
+    rgba(161, 17, 176, 1) 100%
+  );
+}
+.fire {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(68, 66, 151, 1) 0%,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(229, 77, 17, 1) 86%
+  );
+}
+.fairy {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(68, 66, 151, 1) 0%,
+    rgba(247, 0, 133, 1) 0%,
+    rgba(225, 46, 129, 1) 48%,
+    rgba(158, 0, 51, 1) 100%
+  );
+}
+.psychic {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(254, 255, 0, 1) 0%,
+    rgba(255, 226, 0, 1) 0%,
+    rgba(190, 163, 29, 1) 52%,
+    rgba(145, 99, 18, 1) 100%
+  );
+}
+.rock {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(254, 255, 0, 1) 0%,
+    rgba(169, 113, 76, 1) 0%,
+    rgba(161, 106, 57, 1) 47%,
+    rgba(111, 88, 48, 1) 100%
+  );
+}
+.ghost {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    120deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(254, 255, 0, 1) 0%,
+    rgba(130, 0, 165, 1) 0%,
+    rgba(66, 23, 80, 1) 47%,
+    rgba(35, 25, 25, 1) 100%
+  );
+}
+
+.aksi button:hover {
+  background-color: rgb(42, 161, 235);
+  cursor: pointer;
+}
+.scroll {
+  position: fixed;
+  right: 20px;
+  background-color: var(--bg-primary);
+  padding: 15px;
+  border-radius: 50%;
+  display: none;
+}
+.active {
+  display: block;
+}
+.scroll:hover {
+  cursor: pointer;
+}
+.scroll span {
+  color: white;
+  font-size: 30px;
+}
+
+.loading {
+  position: absolute;
+  text-align: center;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.loading p {
+  font-size: 30px;
+  font-weight: 800;
+  font-variant: small-caps;
+}
+.loading img {
+  width: 40%;
+  animation: load 2s infinite;
+}
+
+@keyframes load {
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(68, 66, 151, 1) 0%,
+    rgba(15, 15, 233, 1) 31%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  font-size: 20px;
+  color: white;
+}
+
+@media (max-width: 960px) {
+  .pagination button {
+    width: 20%;
+  }
+  .card {
+    width: 29%;
+  }
+}
+@media (max-width: 786px) {
+  .pagination button {
+    width: 30%;
+  }
+  .card {
+    width: 35%;
+    height: 400px;
+  }
+  .card .id {
+    height: 5%;
+  }
+  .card .image {
+    margin-top: 10px;
+  }
+  .card .aksi {
+    flex-direction: column;
+    margin: 10px 0;
+    height: 14%;
+    gap: 5px;
+  }
+  .aksi h4{
+    font-size: 20px;
+  }
+  .aksi button {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 678px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media (max-width: 476px) {
+  nav .menu {
+    width: auto;
+  }
+  .menu .search {
+    width: 100%;
+  }
+  .menu .search input {
+    width: 50%;
+  }
+
+  .pagination button {
+    width: 30%;
+  }
+
+  .card {
+    height: 300px;
+  }
+  .card .image {
+    /* height: 350px; */
+    height: 60%;
+  }
+  .image img {
+    width: 90%;
+  }
+
+  .card .aksi {
+    margin-top: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25%;
+    padding: 0;
+  }
+  .aksi h4 {
+    font-size: 20px;
+  }
+
+  .aksi button {
+    height: 50%;
+    width: 90%;
+  }
+  .card .loading img {
+    width: 60%;
+  }
+}
