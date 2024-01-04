@@ -6,7 +6,7 @@ const row = document.querySelector(".row");
 const search = document.querySelector("input");
 const scroll = document.querySelector(".scroll");
 const resultBox = document.querySelector(".result");
-// const result = document.querySelector(".search-result");
+
 const loading = document.querySelector(".loading");
 
 window.addEventListener("scroll", () => {
@@ -85,7 +85,7 @@ function searchPokemon() {
       loading.style.display = "block";
     }
     loading.style.display = "block";
-    fetch(`https://pokeapi.co/api/v2/pokemon/${search.value}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${search.value.toLowerCase()}`)
       .catch()
       .then((response) => {
         if (!response.ok) {
@@ -124,6 +124,13 @@ function searchPokemon() {
       });
   }
 }
+
+search.addEventListener('keypress', (event)=>{
+  if(event.key == "Enter"){
+    event.preventDefault()
+    searchPokemon()
+  }
+})
 
 function pokemonType(type) {
   let classType;
