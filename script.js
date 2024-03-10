@@ -6,11 +6,11 @@ const row = document.querySelector(".row");
 const search = document.querySelector("input");
 const scroll = document.querySelector(".scroll");
 const resultBox = document.querySelector(".result");
-
 const loading = document.querySelector(".loading");
-
+const boxPopup = document.querySelector(".popup");
+const btn = document.querySelectorAll("#button");
 window.addEventListener("scroll", () => {
-  if (window.pageYOffset > 1000) {
+  if (window.scrollY > 1000) {
     scroll.classList.add("active");
   } else {
     scroll.classList.remove("active");
@@ -67,6 +67,7 @@ function pagination(flow) {
 function showAllPokemon(pokemon) {
   const list = pokemon.map((poke) => cardPokemon(poke, "all")).join("");
   row.innerHTML = list;
+  const card = row.children;
 }
 getAllPokemon();
 
@@ -125,12 +126,12 @@ function searchPokemon() {
   }
 }
 
-search.addEventListener('keypress', (event)=>{
-  if(event.key == "Enter"){
-    event.preventDefault()
-    searchPokemon()
+search.addEventListener("keypress", (event) => {
+  if (event.key == "Enter") {
+    event.preventDefault();
+    searchPokemon();
   }
-})
+});
 
 function pokemonType(type) {
   let classType;
@@ -212,8 +213,75 @@ function cardPokemon(pokemon, get) {
           </div>
           <div class="aksi">
             <h4>${pokemon.name}</h4>
-            <button onclick="getDetail(${pokemon.id})">Detail</button>
+            <button onclick="getDetail(${
+              pokemon.id
+            })" id="button">Detail</button>
           </div>
         </div>
   `;
 }
+
+const getDetail = (id) => {
+  fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    .catch()
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Something Error");
+      }
+      return response.json();
+    })
+    .then((response) => {
+      showPopUp(response);
+      console.log(response);
+    });
+  boxPopup.classList.add("show");
+};
+
+const showPopUp = (detail) => {
+  const mainAbility = detail.types[0].type.name;
+  const type = pokemonType(mainAbility);
+  boxPopup.innerHTML = `
+  <div class= "card-popup ${type}">
+  <img src=${detail.sprites.other.dream_world["front_default"]}> 
+  <div class="img-slide">
+    <span class="next"> > </span>
+    <span class="prev"> < </span>
+  </div>
+  <div class="data">
+    <table>
+        <tr>
+          <th><span>Name</span></th>
+          <td>${detail.name}</td>
+        </tr>
+        <tr>
+          <th><span>Main Ability</span></th>
+          <td>${mainAbility}</td>
+        </tr>
+        <tr>
+          <th><span>Height/Weight</span></th>
+          <td>${detail.height}/${detail.weight}</td>
+        </tr>
+        <tr>
+          <th><span>HP</span></th>
+          <td>${detail.stats[0].base_stat}</td>
+        </tr>
+        <tr>
+          <th><span>Attack Power</span></th>
+          <td>${detail.stats[1].base_stat}</td>
+        </tr>
+        <tr>
+          <th><span>Defense</span></th>
+          <td>${detail.stats[2].base_stat}</td>
+        </tr>
+    </table>
+  </div>
+  </div> 
+  `;
+};
+
+boxPopup.addEventListener("click", (ev) => {
+  boxPopup.classList.remove("show");
+});
+
+const footer = document.querySelector("footer");
+footer.innerHTML = `<h4>&copy; ${new Date().getFullYear()} mrakasondara </h4>`;
