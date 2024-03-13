@@ -445,23 +445,6 @@ footer {
 table th,td{
   padding: 5px;
 }
-
-.card-popup .img-slide{
-  display: flex;
-  width: 90%;
-  justify-content: space-between;
-  position: absolute;
-  top: 50%;
-  /* padding-inline: 20px; */
-}
-.img-slide span{
-  font-size: 3rem;
-  cursor: pointer;
-  transition: .9s ease-in;
-}
-.img-slide span:hover{
-  color: black;
-}
 @media (max-width: 960px) {
   .pagination button {
     width: 20%;
@@ -563,6 +546,6 @@ table th,td{
   }
 
   .popup .card-popup{
-    width: 60%;
+    width: 90%;
   }
 }

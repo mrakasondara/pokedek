@@ -243,10 +243,6 @@ const showPopUp = (detail) => {
   boxPopup.innerHTML = `
   <div class= "card-popup ${type}">
   <img src=${detail.sprites.other.dream_world["front_default"]}> 
-  <div class="img-slide">
-    <span class="next"> > </span>
-    <span class="prev"> < </span>
-  </div>
   <div class="data">
     <table>
         <tr>
