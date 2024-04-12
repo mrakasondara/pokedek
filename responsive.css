@@ -1,0 +1,105 @@
+@media (max-width: 960px) {
+  .pagination button {
+    width: 20%;
+  }
+ .row .card {
+    width: 29%;
+  }
+  .popup .card-popup{
+    font-size: 17px;
+    width: 50%;
+    height: 10%;
+  }
+}
+@media (max-width: 786px) {
+  .pagination button {
+    width: 30%;
+  }
+  .row .card {
+    width: 35%;
+    height: 400px;
+  }
+  .card .id {
+    height: 5%;
+  }
+  .card .image {
+    margin-top: 10px;
+  }
+  .card .aksi {
+    flex-direction: column;
+    margin: 10px 0;
+    height: 14%;
+    gap: 5px;
+  }
+  .aksi h4{
+    font-size: 20px;
+  }
+  .aksi button {
+    height: 100%;
+    width: 100%;
+  }
+  .popup .card-popup{
+    height: 5%;
+    width: 50%;
+  }
+}
+
+@media (max-width: 678px) {
+  .card {
+    width: 40%;
+  }
+  .popup .card-popup{
+    width: 70%;
+  }
+}
+
+@media (max-width: 476px) {
+  nav .menu {
+    width: auto;
+  }
+  .menu .search {
+    width: 100%;
+  }
+  .menu .search input {
+    width: 50%;
+  }
+
+  .pagination button {
+    width: 30%;
+  }
+
+  .row .card {
+    width: 43%;
+    height: 300px;
+  }
+  .card .image {
+    /* height: 350px; */
+    height: 60%;
+  }
+  .image img {
+    width: 90%;
+  }
+
+  .card .aksi {
+    margin-top: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25%;
+    padding: 0;
+  }
+  .aksi h4 {
+    font-size: 20px;
+  }
+
+  .aksi button {
+    height: 45%;
+    width: 90%;
+  }
+  .card .loading img {
+    width: 60%;
+  }
+
+  .popup .card-popup{
+    width: 90%;
+  }
+}

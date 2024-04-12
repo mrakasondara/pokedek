@@ -2,7 +2,7 @@
   "id": "discover-pokedex",
   "start_url": "./index.html",
   "name": "Discover Pokedex",
-  "short_name": "Movie Lite",
+  "short_name": "Pokedex",
   "description": "Pokedex Pokemon Character",
   "display": "standalone",
   "background_color": "#FFFFFF",
