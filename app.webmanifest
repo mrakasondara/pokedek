@@ -1,0 +1,18 @@
+{
+  "id": "discover-pokedex",
+  "start_url": "./index.html",
+  "name": "Discover Pokedex",
+  "short_name": "Movie Lite",
+  "description": "Pokedex Pokemon Character",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#5BBCFF",
+  "icons": [
+    {
+      "src": "/assets/icon.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
